@@ -1,94 +1,79 @@
--- phpMyAdmin SQL Dump
--- version 5.2.1
--- https://www.phpmyadmin.net/
+-- MariaDB dump 10.19  Distrib 10.4.28-MariaDB, for Win64 (AMD64)
 --
--- Host: 127.0.0.1
--- Tempo de geração: 07-Out-2023 às 21:27
--- Versão do servidor: 10.4.28-MariaDB
--- versão do PHP: 8.0.28
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
-
+-- Host: localhost    Database: mostradeciencias
+-- ------------------------------------------------------
+-- Server version	10.4.28-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Banco de dados: `mostradeciencias`
+-- Table structure for table `animais`
 --
 
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `animais`
---
-
+DROP TABLE IF EXISTS `animais`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `animais` (
-  `id_animal` int(11) NOT NULL,
+  `id_animal` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(255) NOT NULL,
-  `qtnd_votos` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
+  `qtnd_votos` int(11) NOT NULL,
+  `descr` text NOT NULL,
+  PRIMARY KEY (`id_animal`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Estrutura da tabela `votos`
+-- Dumping data for table `animais`
 --
 
+LOCK TABLES `animais` WRITE;
+/*!40000 ALTER TABLE `animais` DISABLE KEYS */;
+INSERT INTO `animais` VALUES (1,'Macaco',0,'É um macaco');
+/*!40000 ALTER TABLE `animais` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `votos`
+--
+
+DROP TABLE IF EXISTS `votos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `votos` (
-  `id_voto` int(11) NOT NULL,
+  `id_voto` int(11) NOT NULL AUTO_INCREMENT,
   `fk_id_voto` int(11) DEFAULT NULL,
-  `hora` date DEFAULT NULL
+  `hora` date DEFAULT NULL,
+  PRIMARY KEY (`id_voto`),
+  KEY `fk_id_voto` (`fk_id_voto`),
+  CONSTRAINT `votos_ibfk_1` FOREIGN KEY (`fk_id_voto`) REFERENCES `animais` (`id_animal`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Índices para tabelas despejadas
+-- Dumping data for table `votos`
 --
 
---
--- Índices para tabela `animais`
---
-ALTER TABLE `animais`
-  ADD PRIMARY KEY (`id_animal`);
+LOCK TABLES `votos` WRITE;
+/*!40000 ALTER TABLE `votos` DISABLE KEYS */;
+/*!40000 ALTER TABLE `votos` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
---
--- Índices para tabela `votos`
---
-ALTER TABLE `votos`
-  ADD PRIMARY KEY (`id_voto`),
-  ADD KEY `fk_id_voto` (`fk_id_voto`);
-
---
--- AUTO_INCREMENT de tabelas despejadas
---
-
---
--- AUTO_INCREMENT de tabela `animais`
---
-ALTER TABLE `animais`
-  MODIFY `id_animal` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de tabela `votos`
---
-ALTER TABLE `votos`
-  MODIFY `id_voto` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- Restrições para despejos de tabelas
---
-
---
--- Limitadores para a tabela `votos`
---
-ALTER TABLE `votos`
-  ADD CONSTRAINT `votos_ibfk_1` FOREIGN KEY (`fk_id_voto`) REFERENCES `animais` (`id_animal`);
-COMMIT;
-
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2023-10-07 17:41:24
