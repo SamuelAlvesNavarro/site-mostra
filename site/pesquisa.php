@@ -14,7 +14,7 @@
         <h2>Animais</h2>
     
     <?php 
-        $sql = "SELECT * FROM animais";
+        $sql = "SELECT * FROM animal";
         foreach($pdo->query($sql) as $key => $value): 
     ?>
     <p>Nome: <?php echo $value['nome']; ?></p>
