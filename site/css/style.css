@@ -1,0 +1,395 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Space+Grotesk&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* ODS COLORS: 
+
+    4 (Educacação de Qualidade): #C5192D - vermelho vinho
+    14 (Água): #0A97D9 - azul claro
+    11 (Cidades e comunidadas sustentáveis): #FD9D24 - laranja / marrom (Savana??)
+    15 (Vida Terrestre): #239337 - verde clarinho
+
+
+    floresta: #1E7434
+    savana: #C5192D 
+    tundra: #009FC2 - azul claro
+    águas: #0078AA
+    planície: #239337 - verde clarinho
+
+*/
+body{
+    overflow-x: hidden;
+    background: radial-gradient(at right top, #606060, #202020);
+}
+:root{
+    --square-color: #000000c2;
+    --scroll-color: white;
+}
+.floresta{
+    --scroll-color: #1E7434;
+}
+.savana{
+    --scroll-color: #C5192D;
+}
+.tundra{
+    --scroll-color: #009FC2;
+}
+.aguas{
+    --scroll-color: #0078AA;
+}
+.planicie{
+    --scroll-color: #239337;
+}
+.all{
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    min-height: 100vh;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    background-image: url(../img/rect.svg);
+}
+
+.bc-follow{
+    z-index: 1;
+    width: 0px;
+    height: 0px;
+    top: -200%;
+    left: 0%;
+    border-radius: 50%;
+    position: absolute;
+    box-shadow: 10px 10px 40px 30px var(--scroll-color);
+    -webkit-box-shadow: 10px 10px 40px 30px  var(--scroll-color);
+    -moz-box-shadow: 10px 10px 40px 30px  var(--scroll-color);
+    transition: .05s linear;
+}
+
+
+
+
+
+
+/* HEADER */
+
+.header{
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Space Grotesk', sans-serif;
+}
+.header img{
+    height: 80px;
+    width: 80px;
+}
+.header h1{
+    font-size: 50px;
+}
+
+
+/* TITLES */
+
+.titles{
+    margin-top: 50px;
+    width: 100%;
+    font-family: Roboto;
+    color: white;
+    font-size: 25px;
+    font-weight: 600;
+    text-align: center;
+}
+
+
+.bigs{
+    margin-top: 100px;
+}
+/* CONTROLS */
+
+.control{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.sect-ball{
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: Roboto;
+    padding: 20px;
+    color: white;
+    font-weight: 500;
+    font-size: 25px;
+    background-color: #242424;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border: 1px solid white;
+    border-bottom: 0;
+    padding-bottom: 80px;
+}
+.bc{
+    border-radius: 50%;
+}
+.forest-bc{
+    background-color:#1E7434 ;
+}
+.savana-bc{
+    background-color:#C5192D ;
+}
+.tundra-bc{
+    background-color:#009FC2 ;
+}
+.aguas-bc{
+    background-color:#0078AA ;
+}
+.planicie-bc{
+    background-color:#239337 ;
+}
+.b{
+    width: 100px;
+    height: 100px;
+    background-position: center;
+    background-size: cover;
+    transition: .4s linear;
+}
+.sect-ball:hover .b{
+    transform: scale(1.3) translate(10%, -5%);
+}
+#forest-b{
+    background-image: url(../enter-biome-svg/monkey.svg);
+}
+#savana-b{
+    background-image: url(../enter-biome-svg/vulture.svg);
+}
+#tundra-b{
+    background-image: url(../enter-biome-svg/penguin.svg);
+}
+#aguas-b{
+    background-image: url(../enter-biome-svg/fish.svg);
+}
+#planicie-b{
+    background-image: url(../enter-biome-svg/cow.svg);
+}
+
+.floresta .sect-ball:nth-child(1){
+    background-color: #1E7434;
+    border: none;
+}
+.savana .sect-ball:nth-child(2){
+    background-color: #C5192D;
+    border: none;
+}
+.tundra .sect-ball:nth-child(3){
+    background-color: #009FC2;
+    border: none;
+}
+.aguas .sect-ball:nth-child(4){
+    background-color: #0078AA;
+    border: none;
+}
+.planicie .sect-ball:nth-child(5){
+    background-color: #239337;
+    border: none;
+}
+/* BARS */
+.bar{
+    width: 100%;
+    height: 40px;
+    position: relative;
+    border-radius: 10px;
+}
+
+
+#floresta-bar{
+    background-color: #1E7434;
+}
+#floresta-bar .vectors{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    top: -50px;
+    width: 100%;
+}
+#floresta-bar .vectors img{
+  width: auto;
+  height: 60px;
+}
+
+
+
+.bush{
+    height: 200px;
+    margin-left: -30px;
+    margin-bottom: -22px;
+}
+
+
+
+#savana-bar{
+    background-color: #C5192D;
+}
+#savana-bar .vectors{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    top: -40px;
+    width: 100%;
+}
+#savana-bar .vectors img{
+  width: auto;
+  height: 60px;
+}
+
+
+#tundra-bar{
+    background-color:#009FC2;
+}
+#tundra-bar .vectors{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    top: -40px;
+    width: 100%;
+}
+#tundra-bar .vectors img{
+  width: auto;
+  height: 60px;
+}
+
+#aguas-bar{
+    background-color: #0078AA;
+}
+#aguas-bar .vectors{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    top: -40px;
+    width: 100%;
+}
+#aguas-bar .vectors img{
+  width: auto;
+  height: 60px;
+}
+
+#planicie-bar{
+    background-color: #239337;
+}
+#planicie-bar .vectors{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    top: -40px;
+    width: 100%;
+}
+#planicie-bar .vectors img{
+  width: auto;
+  height: 60px;
+}
+
+
+/* biomes */
+
+#biomes{
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    z-index: 2;
+}
+.biome{
+    display: none;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 50px;
+    justify-content: center;
+    padding: 20px;
+}
+.animal{
+    width: 300px;
+    height: 300px;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    position: relative;
+    cursor: pointer;
+}
+
+.floresta .floresta-biome{
+    display: flex;
+}
+.savana .savana-biome{
+    display: flex;
+}
+.tundra .tundra-biome{
+    display: flex;
+}
+.aguas .aguas-biome{
+    display: flex;
+}
+.planicie .planicie-biome{
+    display: flex;
+}
+
+
+
+.darken-animal{
+    width: 100%;
+    height: 100%;
+    background: #12121271;
+    display: flex;
+    flex-direction: column;
+    transition: .4s linear;
+    padding-bottom: 20px;
+}
+.desc{
+    width: 100%;
+    z-index: 2;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    color: white;
+    font-size: 25px;
+    padding: 10px;
+    background: #060606;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.animal:hover .darken-animal{
+    background: #121212b2;
+}
+
+
+
+
+
+
+.floresta-biome .animal{
+    background-image: url(../img/bioma-floresta-foto.jpg);
+    
+}
+.floresta-biome .desc{
+    background-color: #239337;
+}
+.savana-biome .animal{
+    background-image: url(../img/savana.jpg);
+}
+.aguas-biome .animal{
+    background-image: url(../img/aguas.jpg);
+}
+.tundra-biome .animal{
+    background-image: url(../img/tundra.jpg);
+}
+.planicie-biome .animal{
+    background-image: url(../img/planicie.jpg);
+}

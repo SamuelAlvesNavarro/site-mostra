@@ -1,3 +1,7 @@
+drop database if exists amostra;
+create database amostra;
+use amostra;
+
 CREATE TABLE `animal` (
   `id_animal` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(255) NOT NULL,
