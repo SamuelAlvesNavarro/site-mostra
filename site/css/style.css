@@ -23,7 +23,7 @@
 */
 body{
     overflow-x: hidden;
-    background: radial-gradient(at right top, #606060, #202020);
+    background: radial-gradient(at right bottom, #606060, #202020);
 }
 :root{
     --square-color: #000000c2;
