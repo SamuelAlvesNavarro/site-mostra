@@ -1,7 +1,7 @@
 <?php
-    $pdo = new PDO('mysql:host=localhost;port=3306;dbname=mostradeciencias', 'root', '');
+    require "conexao.php";
 
-    $id_animal = $_POST['id_animal'];
+    $id_animal = $_GET['animal'];
 
     $sql = "INSERT INTO voto VALUES(NULL, '$id_animal',now())";
     $prepare = $pdo->prepare($sql);

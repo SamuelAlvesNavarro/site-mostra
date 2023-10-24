@@ -374,22 +374,71 @@ body{
 
 
 
-.floresta-biome .animal{
-    background-image: url(../img/bioma-floresta-foto.jpg);
+.floresta-biome .animal, .b0{
+    background-image: url(../img/floresta.jpg);
     
 }
 .floresta-biome .desc{
     background-color: #239337;
 }
-.savana-biome .animal{
+.savana-biome .animal, .b1{
     background-image: url(../img/savana.jpg);
 }
-.aguas-biome .animal{
+.aguas-biome .animal, .b2{
     background-image: url(../img/aguas.jpg);
 }
-.tundra-biome .animal{
+.tundra-biome .animal, .b3{
     background-image: url(../img/tundra.jpg);
 }
-.planicie-biome .animal{
+.planicie-biome .animal, .b4{
     background-image: url(../img/planicie.jpg);
+}
+
+
+
+
+
+
+
+.animal-div{
+    border: 1px solid white;
+    border-bottom: none;
+    border-radius: 10px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    max-width: 1200px;
+    padding: 10px;
+    background-color: #202020;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+}
+.banner-animal{
+    width: 100%;
+    border-radius: 10px;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.banner-animal img{
+    height: 100%;
+    background-size: 100%;
+    object-fit: contain;
+    position: absolute;
+    bottom: -70px;
+    left: 50%;
+}
+.animal-dados{
+    width: 100%;
+    padding: 20px 0;
+    color: white;
+    font-family: 'Space Grotesk', sans-serif;
+}
+.animal-dados h1{
+    font-weight: 600;
 }

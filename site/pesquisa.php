@@ -1,9 +1,12 @@
+<?php
+    require "conexao.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=1.1">
     <title>Qual o seu animal favorito?</title>
 </head>
 <body>
@@ -218,6 +221,16 @@
                 </div>
                 <div class="animal"></div>
                 <div class="animal"></div>
+            </div>
+        </section>
+        <section class="animals">
+            <div class="animal-div cachorro">
+                <div class="banner-animal b0">
+                    <img src="animal/cachorro/cachorro0.png" alt="" srcset="">
+                </div>
+                <div class="animal-dados">
+                    <h1>Cachorro</h1>
+                </div>
             </div>
         </section>
     </div>

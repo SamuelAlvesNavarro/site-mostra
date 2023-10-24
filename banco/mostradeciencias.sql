@@ -7,6 +7,9 @@ CREATE TABLE `animal` (
   `nome` varchar(255) NOT NULL,
   `pasta_nome` varchar(255) NOT NULL,
   `descr` text NOT NULL,
+  bioma tinyint not null default 0,
+  bottom int not null default 0,
+  left int not null default 0,
   PRIMARY KEY (`id_animal`)
 );
 
