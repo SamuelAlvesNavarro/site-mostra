@@ -1,7 +1,7 @@
 <?php
     require "conexao.php";
 
-    $id_animal = $_GET['animal'];
+    $id_animal = $_POST['animal'];
 
     $sql = "INSERT INTO voto VALUES(NULL, '$id_animal',now())";
     $prepare = $pdo->prepare($sql);
