@@ -8,8 +8,8 @@ CREATE TABLE `animal` (
   `pasta_nome` varchar(255) NOT NULL,
   `descr` text NOT NULL,
   bioma tinyint not null default 0,
-  bottom int not null default 0,
-  left int not null default 0,
+  bottom_ int not null default 0,
+  left_ int not null default 0,
   PRIMARY KEY (`id_animal`)
 );
 
