@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css?v=1.1">
+    <link rel="stylesheet" href="css/style.css?v=1.12">
     <title>Qual o seu animal favorito?</title>
 </head>
 <body>
@@ -224,14 +224,55 @@
             </div>
         </section>
         <section class="animals">
-            <div class="animal-div cachorro">
-                <div class="banner-animal b0">
-                    <img src="animal/cachorro/cachorro0.png" alt="" srcset="">
+            <?php
+                $sel = "select * from animal";
+                foreach($pdo->query($sel) as $key => $valor):
+                    
+                    $desc = "<ul>" . $valor['descr'];
+            
+                    $desc = str_replace("•", "<li>", $desc);
+                    $desc = str_replace(";", ";</li>", $desc);
+                    $desc = str_replace(".", ".</li>", $desc);
+            
+                    $desc .= "</ul>";
+            
+                    
+                    $pasta = "animal/".$valor['pasta_nome']."/";
+                    $animal = $valor['pasta_nome'];
+                    $bioma = $valor['bioma'];
+                    $nome = $valor['nome'];
+
+            ?>
+                <div class="animal-div <?php echo $valor['nome']; ?>">
+                    <div class="banner-animal b<?php echo $bioma; ?>">
+                        <img src="<?php echo $pasta.$animal; ?>0.png" alt="" srcset=""
+                        style="left: <?php echo $valor['left_']; ?>;bottom: <?php echo $valor['bottom_']; ?>"
+                        >
+                    </div>
+                    <div class="animal-dados">
+                        <h1>Cachorro</h1>
+                        <?php echo $desc; ?>
+                        <h1>Outros</h1>
+                        <ul>
+                            <li> Segure o mouse nas fotos dos animais!</li>
+                        </ul>
+                    </div>
+                    <div class="imagem-extra">
+                        <img src="<?php echo $pasta.$animal; ?>1.jpg" alt="" srcset="">
+                        <img src="<?php echo $pasta.$animal; ?>2.jpg" alt="" srcset="">
+                        <img src="<?php echo $pasta.$animal; ?>3.jpg" alt="" srcset="">
+                        <img src="<?php echo $pasta.$animal; ?>4.jpg" alt="" srcset="">
+                        <img src="<?php echo $pasta.$animal; ?>5.jpg" alt="" srcset="">
+                    </div>
+                    <div class="button">
+                        <form action="voto.php" method="post">
+                            <input type="hidden" name="animal" value="<?php echo $valor['id_animal']; ?>">
+                            <button type="submit">Votar no <?php echo $nome; ?>!</button>
+                        </form>
+                    </div>
                 </div>
-                <div class="animal-dados">
-                    <h1>Cachorro</h1>
-                </div>
-            </div>
+
+            <?php endforeach; ?>
         </section>
     </div>
     <script src="js/index.js"></script>

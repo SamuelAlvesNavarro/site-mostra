@@ -391,7 +391,7 @@ body{
     background-image: url(../img/tundra.jpg);
 }
 .planicie-biome .animal, .b4{
-    background-image: url(../img/planicie.jpg);
+    background-image: url(../img/planicie1.jpg);
 }
 
 
@@ -402,12 +402,9 @@ body{
 
 .animal-div{
     border: 1px solid white;
-    border-bottom: none;
     border-radius: 10px;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    position: fixed;
-    bottom: 0;
+    position: absolute;
+    top: 20px;
     width: 100%;
     max-width: 1200px;
     padding: 10px;
@@ -430,15 +427,69 @@ body{
     background-size: 100%;
     object-fit: contain;
     position: absolute;
-    bottom: -70px;
-    left: 50%;
 }
 .animal-dados{
     width: 100%;
-    padding: 20px 0;
+    padding: 20px 0 0 0;
     color: white;
     font-family: 'Space Grotesk', sans-serif;
 }
 .animal-dados h1{
     font-weight: 600;
+}
+.animal-dados ul{
+    padding: 10px 30px;
+}
+.imagem-extra{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+}
+.imagem-extra img{
+    max-width: 19%;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+
+
+.button{
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button button{
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    font-family: 'Space Grotesk', sans-serif;
+    border-radius: 10px;
+
+    animation: pulseBt 10s;
+    animation-iteration-count: infinite;
+}
+@keyframes pulseBt {
+    20%{
+        background-color: #1E7434;
+    }
+    40%{
+        background-color:#239337;
+    }
+    60%{
+        background-color:#C5192D;
+    }
+    80%{
+        background-color:#009FC2;
+    }
+    100%{
+        background-color:#0078AA;
+    }
 }
