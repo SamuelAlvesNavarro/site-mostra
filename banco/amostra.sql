@@ -1,3 +1,6 @@
+drop database amostra;
+create database amostra;
+use amostra;
 -- phpMyAdmin SQL Dump
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
@@ -33,8 +36,8 @@ CREATE TABLE `animal` (
   `pasta_nome` varchar(255) NOT NULL,
   `descr` text NOT NULL,
   `bioma` tinyint(4) NOT NULL DEFAULT 0,
-  `bottom_` int(11) NOT NULL DEFAULT 0,
-  `left_` int(11) NOT NULL DEFAULT 0
+  `bottom_` varchar(255) NOT NULL DEFAULT '0px',
+  `left_` varchar(255) NOT NULL DEFAULT '0px'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --

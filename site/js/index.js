@@ -59,3 +59,22 @@ function set(classe, rootClass){
 
 
 set(0, 'floresta')
+
+
+var ani_div = document.getElementsByClassName("animal-div")
+var cur = 0
+function appear(num){
+    for(var i = 0; i < ani_div.length; i++){
+        if(i == num - 1){
+            ani_div[i].classList.add('appear');
+            cur = i;
+        }else{
+            ani_div[i].classList.remove('appear');
+        }
+    }
+}
+
+
+document.getElementById('all').addEventListener("click", () => {
+    ani_div[cur].classList.remove('appear');
+})

@@ -384,10 +384,10 @@ body{
 .savana-biome .animal, .b1{
     background-image: url(../img/savana.jpg);
 }
-.aguas-biome .animal, .b2{
+.aguas-biome .animal, .b3{
     background-image: url(../img/aguas.jpg);
 }
-.tundra-biome .animal, .b3{
+.tundra-biome .animal, .b2{
     background-image: url(../img/tundra.jpg);
 }
 .planicie-biome .animal, .b4{
@@ -412,6 +412,10 @@ body{
     left: 50%;
     transform: translateX(-50%);
     z-index: 5;
+    display: none;
+}
+.appear{
+    display: block;
 }
 .banner-animal{
     width: 100%;

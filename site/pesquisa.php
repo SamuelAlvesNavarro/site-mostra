@@ -13,7 +13,7 @@
     <div class="bc-follow" id="mousefollow">
 
     </div>
-    <div class="all">
+    <div class="all" id='all'>
         <section class="header">
             <img src="img/ods-p.png" alt="" srcset="">
             <h1>Qual seu animal favorito?</h1>
@@ -162,68 +162,118 @@
         </div>
         <section id="biomes">
             <div class="floresta-biome biome">
-                <div class="animal">
-                    <div class="darken-animal">
-                        <img src="img/macaco.png" alt="" srcset="">
-                        <div class="desc">
-                            Macaco
+                <?php
+                    $sel = "select * from animal where bioma = 0";
+                    foreach($pdo->query($sel) as $key => $valor): 
+
+                    $pasta = "animal/".$valor['pasta_nome']."/";
+                    $animal = $valor['pasta_nome'];
+                    $bioma = $valor['bioma'];
+                    $nome = $valor['nome'];  
+                ?>
+                    <div class="animal" onclick="appear(<?php echo $valor['id_animal']; ?>)">
+                        <div class="darken-animal">
+                            <img src="<?php echo $pasta.$animal; ?>0.png" alt="" srcset="">
+                            <div class="desc">
+                              <?php echo $nome; ?>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="animal"></div>
-                <div class="animal"></div>
-                <div class="animal"></div>
+                <?php
+                    endforeach;
+                ?>
             </div>
             <div class="savana-biome biome">
-                <div class="animal">
-                    <div class="darken-animal">
-                        <img src="img/girafinha.png" alt="" srcset="">
-                        <div class="desc">
-                            Macaco
+            <?php
+                    $sel = "select * from animal where bioma = 1";
+                    foreach($pdo->query($sel) as $key => $valor): 
+
+                    $pasta = "animal/".$valor['pasta_nome']."/";
+                    $animal = $valor['pasta_nome'];
+                    $bioma = $valor['bioma'];
+                    $nome = $valor['nome'];  
+                ?>
+                    <div class="animal" onclick="appear(<?php echo $valor['id_animal']; ?>)">
+                        <div class="darken-animal">
+                            <img src="<?php echo $pasta.$animal; ?>0.png" alt="" srcset="">
+                            <div class="desc">
+                              <?php echo $nome; ?>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="animal"></div>
-                <div class="animal"></div>
+                <?php
+                    endforeach;
+                ?>
             </div>
             <div class="tundra-biome biome">
-                <div class="animal">
-                    <div class="darken-animal">
-                        <img src="img/macaco.png" alt="" srcset="">
-                        <div class="desc">
-                            Macaco
+            <?php
+                    $sel = "select * from animal where bioma = 2";
+                    foreach($pdo->query($sel) as $key => $valor): 
+
+                    $pasta = "animal/".$valor['pasta_nome']."/";
+                    $animal = $valor['pasta_nome'];
+                    $bioma = $valor['bioma'];
+                    $nome = $valor['nome'];  
+                ?>
+                    <div class="animal" onclick="appear(<?php echo $valor['id_animal']; ?>)">
+                        <div class="darken-animal">
+                            <img src="<?php echo $pasta.$animal; ?>0.png" alt="" srcset="">
+                            <div class="desc">
+                              <?php echo $nome; ?>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="animal"></div>
+                <?php
+                    endforeach;
+                ?>
             </div>
             <div class="aguas-biome biome">
-                <div class="animal">
-                    <div class="darken-animal">
-                        <img src="img/macaco.png" alt="" srcset="">
-                        <div class="desc">
-                            Macaco
+            <?php
+                    $sel = "select * from animal where bioma = 3";
+                    foreach($pdo->query($sel) as $key => $valor): 
+
+                    $pasta = "animal/".$valor['pasta_nome']."/";
+                    $animal = $valor['pasta_nome'];
+                    $bioma = $valor['bioma'];
+                    $nome = $valor['nome'];  
+                ?>
+                    <div class="animal" onclick="appear(<?php echo $valor['id_animal']; ?>)">
+                        <div class="darken-animal">
+                            <img src="<?php echo $pasta.$animal; ?>0.png" alt="" srcset="">
+                            <div class="desc">
+                              <?php echo $nome; ?>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="animal"></div>
-                <div class="animal"></div>
-                <div class="animal"></div>
+                <?php
+                    endforeach;
+                ?>
             </div>
             <div class="planicie-biome biome">
-                <div class="animal">
-                    <div class="darken-animal">
-                        <img src="img/macaco.png" alt="" srcset="">
-                        <div class="desc">
-                            Macaco
+            <?php
+                    $sel = "select * from animal where bioma = 4";
+                    foreach($pdo->query($sel) as $key => $valor): 
+
+                    $pasta = "animal/".$valor['pasta_nome']."/";
+                    $animal = $valor['pasta_nome'];
+                    $bioma = $valor['bioma'];
+                    $nome = $valor['nome'];  
+                ?>
+                    <div class="animal" onclick="appear(<?php echo $valor['id_animal']; ?>)">
+                        <div class="darken-animal">
+                            <img src="<?php echo $pasta.$animal; ?>0.png" alt="" srcset="">
+                            <div class="desc">
+                              <?php echo $nome; ?>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="animal"></div>
-                <div class="animal"></div>
+                <?php
+                    endforeach;
+                ?>
             </div>
         </section>
-        <section class="animals">
+    </div>
+    <section class="animals">
             <?php
                 $sel = "select * from animal";
                 foreach($pdo->query($sel) as $key => $valor):
@@ -231,6 +281,7 @@
                     $desc = "<ul>" . $valor['descr'];
             
                     $desc = str_replace("•", "<li>", $desc);
+                    $desc = str_replace("●", "<li>", $desc);
                     $desc = str_replace(";", ";</li>", $desc);
                     $desc = str_replace(".", ".</li>", $desc);
             
@@ -250,7 +301,7 @@
                         >
                     </div>
                     <div class="animal-dados">
-                        <h1>Cachorro</h1>
+                        <h1><?php echo $valor['nome']; ?></h1>
                         <?php echo $desc; ?>
                         <h1>Outros</h1>
                         <ul>
@@ -274,7 +325,6 @@
 
             <?php endforeach; ?>
         </section>
-    </div>
-    <script src="js/index.js"></script>
+    <script src="js/index.js?v=1.1"></script>
 </body>
 </html>
