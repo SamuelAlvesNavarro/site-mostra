@@ -63,6 +63,13 @@ set(0, 'floresta')
 
 var ani_div = document.getElementsByClassName("animal-div")
 var cur = 0
+var close_ = 0
+
+document.getElementById('all').addEventListener("click", () => {
+    if(close_ == 1){
+        ani_div[cur].classList.remove('appear');
+    }
+})
 
 function appear(num){
 
@@ -70,15 +77,15 @@ function appear(num){
     for(var i = 0; i < ani_div.length; i++){
         if(i == num - 1){
             ani_div[i].classList.add('appear');
-            console.log('x')
             cur = i;
+            close_ = 0
+
+            setTimeout( () => {
+                close_ = 1;
+            }, 100)
         }else{
             ani_div[i].classList.remove('appear');
         }
     }
 }
 
-
-document.getElementById('all').addEventListener("click", () => {
-    ani_div[cur].classList.remove('appear');
-})

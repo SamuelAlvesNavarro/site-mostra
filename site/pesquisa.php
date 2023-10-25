@@ -173,7 +173,7 @@
                 ?>
                     <div class="animal" onclick="appear(<?php echo $valor['id_animal']; ?>)">
                         <div class="darken-animal">
-                            <img src="<?php echo $pasta.$animal; ?>0.png" alt="" srcset="">
+                            <img src="<?php echo $pasta; ?>0.png" alt="" srcset="">
                             <div class="desc">
                               <?php echo $nome; ?>
                             </div>
@@ -195,7 +195,7 @@
                 ?>
                     <div class="animal" onclick="appear(<?php echo $valor['id_animal']; ?>)">
                         <div class="darken-animal">
-                            <img src="<?php echo $pasta.$animal; ?>0.png" alt="" srcset="">
+                            <img src="<?php echo $pasta; ?>0.png" alt="" srcset="">
                             <div class="desc">
                               <?php echo $nome; ?>
                             </div>
@@ -217,7 +217,7 @@
                 ?>
                     <div class="animal" onclick="appear(<?php echo $valor['id_animal']; ?>)">
                         <div class="darken-animal">
-                            <img src="<?php echo $pasta.$animal; ?>0.png" alt="" srcset="">
+                            <img src="<?php echo $pasta; ?>0.png" alt="" srcset="">
                             <div class="desc">
                               <?php echo $nome; ?>
                             </div>
@@ -239,7 +239,7 @@
                 ?>
                     <div class="animal" onclick="appear(<?php echo $valor['id_animal']; ?>)">
                         <div class="darken-animal">
-                            <img src="<?php echo $pasta.$animal; ?>0.png" alt="" srcset="">
+                            <img src="<?php echo $pasta; ?>0.png" alt="" srcset="">
                             <div class="desc">
                               <?php echo $nome; ?>
                             </div>
@@ -261,7 +261,7 @@
                 ?>
                     <div class="animal" onclick="appear(<?php echo $valor['id_animal']; ?>)">
                         <div class="darken-animal">
-                            <img src="<?php echo $pasta.$animal; ?>0.png" alt="" srcset="">
+                            <img src="<?php echo $pasta; ?>0.png" alt="" srcset="">
                             <div class="desc">
                               <?php echo $nome; ?>
                             </div>
@@ -296,7 +296,7 @@
             ?>
                 <div class="animal-div <?php echo $valor['nome']; ?>">
                     <div class="banner-animal b<?php echo $bioma; ?>">
-                        <img src="<?php echo $pasta.$animal; ?>0.png" alt="" srcset=""
+                        <img src="<?php echo $pasta; ?>0.png" alt="" srcset=""
                         style="left: <?php echo $valor['left_']; ?>;bottom: <?php echo $valor['bottom_']; ?>"
                         >
                     </div>
@@ -309,11 +309,11 @@
                         </ul>
                     </div>
                     <div class="imagem-extra">
-                        <img src="<?php echo $pasta.$animal; ?>1.jpg" alt="" srcset="">
-                        <img src="<?php echo $pasta.$animal; ?>2.jpg" alt="" srcset="">
-                        <img src="<?php echo $pasta.$animal; ?>3.jpg" alt="" srcset="">
-                        <img src="<?php echo $pasta.$animal; ?>4.jpg" alt="" srcset="">
-                        <img src="<?php echo $pasta.$animal; ?>5.jpg" alt="" srcset="">
+                        <img src="<?php echo $pasta; ?>1.jpg" alt="" srcset="">
+                        <img src="<?php echo $pasta; ?>2.jpg" alt="" srcset="">
+                        <img src="<?php echo $pasta; ?>3.jpg" alt="" srcset="">
+                        <img src="<?php echo $pasta; ?>4.jpg" alt="" srcset="">
+                        <img src="<?php echo $pasta; ?>5.jpg" alt="" srcset="">
                     </div>
                     <div class="button">
                         <form action="voto.php" method="post">
