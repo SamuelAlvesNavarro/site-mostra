@@ -3,7 +3,7 @@
 
     $id_animal = $_POST['animal'];
 
-    $sql = "INSERT INTO voto VALUES(NULL, '$id_animal',now())";
+    $sql = "INSERT INTO voto VALUES(NULL, '$id_animal', now())";
     $prepare = $pdo->prepare($sql);
     $prepare->execute();
 

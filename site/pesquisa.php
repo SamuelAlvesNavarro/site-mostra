@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css?v=1.12">
+    <link rel="stylesheet" href="css/style.css?v=1.12<?php echo rand(0,1000)?>">
     <title>Qual o seu animal favorito?</title>
 </head>
 <body>
@@ -325,6 +325,6 @@
 
             <?php endforeach; ?>
         </section>
-    <script src="js/index.js?v=1.1"></script>
+    <script src="js/index.js?v=1.1<?php echo rand(0,1000)?>"></script>
 </body>
 </html>

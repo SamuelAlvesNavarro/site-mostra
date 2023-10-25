@@ -72,7 +72,7 @@ INSERT INTO `animal` (`id_animal`, `nome`, `pasta_nome`, `descr`, `bioma`, `bott
 CREATE TABLE `voto` (
   `id_voto` int(11) NOT NULL,
   `fk_id_animal` int(11) NOT NULL,
-  `hora` date DEFAULT current_timestamp()
+  `hora` time
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
