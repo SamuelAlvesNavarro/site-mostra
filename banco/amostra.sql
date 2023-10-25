@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 25-Out-2023 às 13:54
+-- Tempo de geração: 25-Out-2023 às 14:14
 -- Versão do servidor: 10.4.28-MariaDB
 -- versão do PHP: 8.0.28
 
@@ -66,7 +66,8 @@ INSERT INTO `animal` (`id_animal`, `nome`, `pasta_nome`, `descr`, `bioma`, `bott
 (22, 'Rato', 'rato', '● Existem mais de 1 700 espécies de ratos distribuídas por todo o planeta;\r\n● Ratos possuem uma extraordinária habilidade para se localizar, aprender caminhos\r\nnovos e criar atalhos em lugares conhecidos (em resumo: eles possuem uma noção\r\nespacial mais evoluída do que a nossa);\r\n● Uma fêmea de ratazana pode dar à luz 200 descendentes em apenas um ano;\r\n● Ratos vivem, em média, dois anos;\r\n● Noventa e cinco por cento do código genético dos ratos é igual ao dos humanos;\r\n● Mais de 80% das pesquisas feitas com animais envolvem ratos de laboratório.', 4, '0px', '0px'),
 (23, 'Polvo', 'polvo', '● Polvos gostam de brincar;\r\n● Eles são inteligentes e a maioria de suas células cerebrais está nos tentáculos;\r\n● Polvos podem reconhecer pessoas;\r\n● A saudação mais comum entre polvos é um \"tapinha\";\r\n● O Polvo tem três corações, que bombeiam um sangue azul-esverdeado;\r\n● O polvo não possui esqueleto.', 3, '0px', '0px'),
 (24, 'Tartaruga', 'tartaruga', '● O termo tartaruga pode ser utilizado de duas formas, a primeira para definir todos os animais\r\nda ordem dos quelônios, ou seja, tartarugas marinhas, jabutis e cágados. A segunda maneira\r\ndiz respeito apenas às tartarugas marinhas;\r\n● Todas as espécies de tartarugas marinhas estão ameaçadas de extinção. Os principais\r\nmotivos são a urbanização das áreas de desova e a poluição dos oceanos;\r\n● Apesar de nascerem na praia, esses répteis passam a maior parte de suas vidas no mar,\r\nretornando à terra apenas para desovar;\r\n● Possuem uma dieta onívora e bastante variada. Dependendo da espécie, podem comer\r\nmedusas, pequenos invertebrados, peixes, esponjas ou algas;\r\n● As tartarugas marinhas surgiram na Terra há pelo menos 120 milhões de anos;\r\n● Quando se trata de comunicação entre si, elas geralmente usam comunicação não verbal,\r\ncomo morder, espirrar água e piscar.', 3, '0px', '0px'),
-(25, 'Dragão de Komodo', 'dragao-de-comodo', '● Em Komodo, esses animais são conhecidos como “crocodilo da terra”;\r\n● Dragões-de-Komodo são animais com uma grande multiplicidade de cor, então é\r\npossível encontrar variedades desses lagartos nas colorações azul, laranja, verde e\r\ncinza;\r\n● São animais extremamente raros que habitam apenas cinco ilhas em todo o planeta:\r\nKomodo, Rinca, Gili Montang, Gili Dasami e as Ilhas Lesser Sunda. Todas elas ficam\r\ndentro do Parque Nacional de Komodo;\r\n● São bichos carnívoros e conseguem dar conta de presas grandes, como búfalos,\r\nveados, porcos e, inclusive, pessoas. Podem apresentar comportamento canibal e\r\ndevorar pequenos dragões-de-Komodo. Em apenas uma refeição, podem comer o\r\nequivalente a 80% de seu peso!;\r\n● Para enganar possíveis predadores, as fêmeas constroem vários ninhos falsos além\r\ndo ninho oficial, onde escondem seus ovos por três meses;\r\n● A espécie não está em perigo de extinção, mas é considerada vulnerável. Estima-se\r\nque existam 6 mil dragões-de-Komodo em todo o planeta.', 4, '0px', '0px');
+(25, 'Dragão de Komodo', 'komodo', '● Em Komodo, esses animais são conhecidos como “crocodilo da terra”;\r\n● Dragões-de-Komodo são animais com uma grande multiplicidade de cor, então é\r\npossível encontrar variedades desses lagartos nas colorações azul, laranja, verde e\r\ncinza;\r\n● São animais extremamente raros que habitam apenas cinco ilhas em todo o planeta:\r\nKomodo, Rinca, Gili Montang, Gili Dasami e as Ilhas Lesser Sunda. Todas elas ficam\r\ndentro do Parque Nacional de Komodo;\r\n● São bichos carnívoros e conseguem dar conta de presas grandes, como búfalos,\r\nveados, porcos e, inclusive, pessoas. Podem apresentar comportamento canibal e\r\ndevorar pequenos dragões-de-Komodo. Em apenas uma refeição, podem comer o\r\nequivalente a 80% de seu peso!;\r\n● Para enganar possíveis predadores, as fêmeas constroem vários ninhos falsos além\r\ndo ninho oficial, onde escondem seus ovos por três meses;\r\n● A espécie não está em perigo de extinção, mas é considerada vulnerável. Estima-se\r\nque existam 6 mil dragões-de-Komodo em todo o planeta.', 4, '0px', '0px'),
+(26, 'Lobo', 'lobo', '● A alcateia é liderada por um casal reprodutor, que permanece junto a vida toda;\r\n● A coloração dos pelos dos lobos varia: avermelhados, cinza, brancos, pretos... Isso tem a ver\r\ncom o ambiente em que vivem. Cinza ou branco, por exemplo, ajudam na camuflagem em\r\nambientes como a neve;\r\n● O uivo ajuda a manter o grupo unido. E mostra para outras alcateias que eles estão por ali,\r\nevitando o confronto direto entre os vizinhos;\r\n● Quando lobos se reproduzem, geram entre dois e seis filhotes;\r\n● Com 6 meses de vida, os filhotes começam a caçar;\r\n● Os lobos até comem frutos e vegetais, mas a alimentação vem, em maior parte, de bichos pequenos: répteis, animais mortos, crustáceos e peixes — caçados em regiões rasas.', 4, '0px', '0px');
 
 -- --------------------------------------------------------
 
@@ -79,6 +80,13 @@ CREATE TABLE `voto` (
   `fk_id_animal` int(11) NOT NULL,
   `hora` time DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Extraindo dados da tabela `voto`
+--
+
+INSERT INTO `voto` (`id_voto`, `fk_id_animal`, `hora`) VALUES
+(1, 16, '09:00:15');
 
 --
 -- Índices para tabelas despejadas
@@ -105,13 +113,13 @@ ALTER TABLE `voto`
 -- AUTO_INCREMENT de tabela `animal`
 --
 ALTER TABLE `animal`
-  MODIFY `id_animal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id_animal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT de tabela `voto`
 --
 ALTER TABLE `voto`
-  MODIFY `id_voto` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_voto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restrições para despejos de tabelas
