@@ -7,9 +7,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css?v=1.12<?php echo rand(0,1000)?>">
+    <script src="https://kit.fontawesome.com/f2389f6c39.js" crossorigin="anonymous"></script>
     <title>Qual o seu animal favorito?</title>
 </head>
 <body>
+    <div class="timer" id="timer" style="display: none;">
+        <h1>Obrigado por Votar!</h1>
+    </div>
     <div class="bc-follow" id="mousefollow">
 
     </div>
@@ -29,7 +33,7 @@
                     <div id="forest-b" class="b"></div> 
                     </div>
                     <div class="title-forest-b">
-                        Floresta
+                        Florestas
                     </div>
                 </div>
                 <div class="sect-ball" onclick="set(1, 'savana')">
@@ -37,7 +41,7 @@
                         <div id="savana-b" class="b"></div>
                     </div>
                     <div class="title-savana-b">
-                        Savana
+                        Savanas
                     </div>
                 </div>
                 <div class="sect-ball" onclick="set(2, 'tundra')">
@@ -45,7 +49,7 @@
                         <div id="tundra-b" class="b"></div>
                     </div>
                     <div class="title-tundra-b">
-                        Tundra
+                        Tundras
                     </div>
                 </div>
                 <div class="sect-ball" onclick="set(3, 'aguas')">
@@ -61,7 +65,7 @@
                         <div id="planicie-b" class="b"></div>
                     </div>
                     <div class="title-planicie-b">
-                        Planície
+                        Planícies
                     </div>
                 </div>
             </section>
@@ -173,7 +177,7 @@
                 ?>
                     <div class="animal" onclick="appear(<?php echo $valor['id_animal']; ?>)">
                         <div class="darken-animal">
-                            <img src="<?php echo $pasta; ?>0.png" alt="" srcset="">
+                            <img src="<?php echo $pasta; ?>0.png?v=1.<?php echo rand(0,1000); ?>" alt="" srcset="">
                             <div class="desc">
                               <?php echo $nome; ?>
                             </div>
@@ -195,7 +199,7 @@
                 ?>
                     <div class="animal" onclick="appear(<?php echo $valor['id_animal']; ?>)">
                         <div class="darken-animal">
-                            <img src="<?php echo $pasta; ?>0.png" alt="" srcset="">
+                            <img src="<?php echo $pasta; ?>0.png?v=1.<?php echo rand(0,1000); ?>" alt="" srcset="">
                             <div class="desc">
                               <?php echo $nome; ?>
                             </div>
@@ -217,7 +221,7 @@
                 ?>
                     <div class="animal" onclick="appear(<?php echo $valor['id_animal']; ?>)">
                         <div class="darken-animal">
-                            <img src="<?php echo $pasta; ?>0.png" alt="" srcset="">
+                            <img src="<?php echo $pasta; ?>0.png?v=1.<?php echo rand(0,1000); ?>" alt="" srcset="">
                             <div class="desc">
                               <?php echo $nome; ?>
                             </div>
@@ -239,7 +243,7 @@
                 ?>
                     <div class="animal" onclick="appear(<?php echo $valor['id_animal']; ?>)">
                         <div class="darken-animal">
-                            <img src="<?php echo $pasta; ?>0.png" alt="" srcset="">
+                            <img src="<?php echo $pasta; ?>0.png?v=1.<?php echo rand(0,1000); ?>" alt="" srcset="">
                             <div class="desc">
                               <?php echo $nome; ?>
                             </div>
@@ -261,7 +265,7 @@
                 ?>
                     <div class="animal" onclick="appear(<?php echo $valor['id_animal']; ?>)">
                         <div class="darken-animal">
-                            <img src="<?php echo $pasta; ?>0.png" alt="" srcset="">
+                            <img src="<?php echo $pasta; ?>0.png?v=1.<?php echo rand(0,1000); ?>" alt="" srcset="">
                             <div class="desc">
                               <?php echo $nome; ?>
                             </div>
@@ -274,6 +278,9 @@
         </section>
     </div>
     <section class="animals">
+        <div id="close_off" style="display: none;">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
             <?php
                 $sel = "select * from animal";
                 foreach($pdo->query($sel) as $key => $valor):
@@ -295,8 +302,9 @@
 
             ?>
                 <div class="animal-div <?php echo $valor['nome']; ?>">
+                    
                     <div class="banner-animal b<?php echo $bioma; ?>">
-                        <img src="<?php echo $pasta; ?>0.png" alt="" srcset=""
+                        <img src="<?php echo $pasta; ?>7.png?v=1.<?php echo rand(0,1000); ?>" alt="" srcset=""
                         style="left: <?php echo $valor['left_']; ?>;bottom: <?php echo $valor['bottom_']; ?>"
                         >
                     </div>

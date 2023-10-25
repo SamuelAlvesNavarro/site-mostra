@@ -63,29 +63,51 @@ set(0, 'floresta')
 
 var ani_div = document.getElementsByClassName("animal-div")
 var cur = 0
-var close_ = 0
 
-document.getElementById('all').addEventListener("click", () => {
-    if(close_ == 1){
-        ani_div[cur].classList.remove('appear');
-    }
+document.getElementById("close_off").addEventListener("click", () => {
+    ani_div[cur].classList.remove('appear');
+    document.getElementById("close_off").style.display = "none";
 })
 
 function appear(num){
-
+    window.scrollTo(0, 0);
     
     for(var i = 0; i < ani_div.length; i++){
         if(i == num - 1){
             ani_div[i].classList.add('appear');
             cur = i;
-            close_ = 0
-
-            setTimeout( () => {
-                close_ = 1;
-            }, 100)
+            document.getElementById("close_off").style.display = "block";
+            
         }else{
             ani_div[i].classList.remove('appear');
         }
     }
 }
+
+
+var timer = 0;
+function toggleTimer(){
+
+    if(timer == 0){
+        document.getElementById("timer").style.display = "flex";
+        document.querySelector('body').classList.add("timerIn");
+        timer = 1;
+    }else{
+        document.getElementById("timer").style.display = "none";
+        document.querySelector('body').classList.remove("timerIn");
+        localStorage.setItem("hora", JSON.stringify("ass"));
+    }
+}
+
+function getHora(){
+    let hora = JSON.parse(localStorage.getItem("hora"));
+
+    if(hora == "ass"){
+        return;
+    }else{
+        toggleTimer()
+        setTimeout(toggleTimer, 15000)
+    }
+}
+getHora();
 
