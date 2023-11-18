@@ -1,3 +1,6 @@
+drop database amostra;
+create database amostra;
+use amostra;
 -- phpMyAdmin SQL Dump
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
